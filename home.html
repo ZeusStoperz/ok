@@ -137,6 +137,8 @@ box-shadow:
 0 0 20px #ff69b4;
 
 transition:.3s;
+
+animation:pulse 3s infinite;
 }
 
 .gallery-btn:hover{
@@ -152,6 +154,27 @@ color:black;
 text-align:center;
 margin-top:30px;
 opacity:.8;
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+box-shadow:
+0 0 10px #ff69b4,
+0 0 20px #ff69b4;
+
+}
+
+50%{
+
+box-shadow:
+0 0 20px #ff69b4,
+0 0 40px #ff69b4,
+0 0 60px #ff69b4;
+
+}
+
 }
 
 </style>
