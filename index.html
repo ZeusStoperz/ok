@@ -498,6 +498,19 @@ document.body.classList.add("hyperjump");
 document
 .querySelector(".sun")
 .classList.add("collapse");
+
+document
+.querySelectorAll(".orbit")
+.forEach(o=>{
+
+o.style.transition="2.5s";
+
+o.style.transform=
+"translate(-50%,-50%) scale(4)";
+
+o.style.opacity="0";
+
+});
   
 setTimeout(()=>{
 
