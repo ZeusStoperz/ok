@@ -52,6 +52,11 @@ z-index:1;
 max-width:1000px;
 margin:auto;
 padding:40px 20px;
+
+opacity:0;
+
+animation:homeEnter 1.5s ease forwards;
+  
 }
 
 /* Judul */
@@ -173,6 +178,21 @@ box-shadow:
 0 0 40px #ff69b4,
 0 0 60px #ff69b4;
 
+}
+
+}
+
+@keyframes homeEnter{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+  
 }
 
 }
