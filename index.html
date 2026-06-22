@@ -380,6 +380,15 @@ box-shadow:
 0 0 120px cyan;
 }
 
+.star.sucked{
+transition:1.8s linear;
+
+left:50% !important;
+top:35% !important;
+
+opacity:0;
+}
+  
 .sun.collapse{
 animation:sunCollapse 1.8s forwards;
 }
@@ -500,13 +509,21 @@ document
 .classList.add("collapse");
 
 document
+.querySelectorAll(".star")
+.forEach(star=>{
+
+star.classList.add("sucked");
+
+});
+
+document
 .querySelectorAll(".orbit")
 .forEach(o=>{
 
 o.style.transition="2.5s";
 
 o.style.transform=
-"translate(-50%,-50%) scale(4)";
+"translate(-50%,-50%) scale(0) rotate(720deg)";
 
 o.style.opacity="0";
 
@@ -516,7 +533,7 @@ setTimeout(()=>{
 
 window.location.href="home.html";
 
-},1800);
+},2500);
 
 });
 
