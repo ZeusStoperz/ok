@@ -6,221 +6,337 @@
 
 <title>KAKANDA ZONE</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    overflow:hidden;
-    background:radial-gradient(circle at center,#081224,#02040a);
-    height:100vh;
-    font-family:'Orbitron',sans-serif;
+font-family:'Orbitron',sans-serif;
+background:#000814;
+overflow:hidden;
+height:100vh;
+position:relative;
 }
 
 /* Bintang */
 .star{
-    position:absolute;
-    background:white;
-    border-radius:50%;
-    animation:twinkle 3s infinite alternate;
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite alternate;
 }
 
 @keyframes twinkle{
-    from{opacity:.2;}
-    to{opacity:1;}
+from{opacity:.2;}
+to{opacity:1;}
 }
 
-/* Konten Tengah */
-.hero{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    z-index:10;
-}
+/* Matahari */
+.sun{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:140px;
+height:140px;
+border-radius:50%;
 
-.hero h1{
-    color:white;
-    font-size:clamp(3rem,8vw,6rem);
-    letter-spacing:8px;
-    text-shadow:
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff;
-}
+background:radial-gradient(
+circle,
+#ffe066,
+#ffb703,
+#fb8500,
+#ff6b00
+);
 
-.hero p{
-    margin-top:15px;
-    color:#d8d8d8;
-    font-size:1.1rem;
-}
-
-.enter-btn{
-    display:inline-block;
-    margin-top:40px;
-    padding:15px 55px;
-    border:2px solid #00ffff;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    transition:.3s;
-    box-shadow:0 0 20px #00ffff;
-}
-
-.enter-btn:hover{
-    transform:scale(1.08);
-    background:#00ffff;
-    color:black;
+box-shadow:
+0 0 40px #ffb703,
+0 0 80px #fb8500,
+0 0 140px #ff6b00;
 }
 
 /* Orbit */
 .orbit{
-    position:absolute;
-    top:50%;
-    left:50%;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:50%;
-    transform:translate(-50%,-50%);
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+border:1px solid rgba(255,255,255,.08);
+border-radius:50%;
 }
 
 .orbit1{
-    width:220px;
-    height:220px;
-    animation:spin 10s linear infinite;
+width:220px;
+height:220px;
+animation:spin 8s linear infinite;
 }
 
 .orbit2{
-    width:350px;
-    height:350px;
-    animation:spin 18s linear infinite;
+width:300px;
+height:300px;
+animation:spin 12s linear infinite;
 }
 
 .orbit3{
-    width:520px;
-    height:520px;
-    animation:spin 28s linear infinite;
+width:400px;
+height:400px;
+animation:spin 16s linear infinite;
 }
 
-.planet{
-    position:absolute;
-    top:-12px;
-    left:50%;
-    transform:translateX(-50%);
-    border-radius:50%;
+.orbit4{
+width:520px;
+height:520px;
+animation:spin 22s linear infinite;
 }
 
-.mercury{
-    width:18px;
-    height:18px;
-    background:#a9a9a9;
-}
-
-.earth{
-    width:26px;
-    height:26px;
-    background:linear-gradient(#1e90ff,#32cd32);
-}
-
-.saturn{
-    width:38px;
-    height:38px;
-    background:#d8b77a;
-    position:absolute;
-    top:-20px;
-    left:50%;
-    transform:translateX(-50%);
-    border-radius:50%;
-}
-
-.saturn::before{
-    content:'';
-    position:absolute;
-    width:65px;
-    height:12px;
-    border:2px solid #e6cf9d;
-    border-radius:50%;
-    left:-15px;
-    top:12px;
+.orbit5{
+width:650px;
+height:650px;
+animation:spin 30s linear infinite;
 }
 
 @keyframes spin{
-    from{
-        transform:translate(-50%,-50%) rotate(0deg);
-    }
-    to{
-        transform:translate(-50%,-50%) rotate(360deg);
-    }
+from{
+transform:translate(-50%,-50%) rotate(0deg);
+}
+to{
+transform:translate(-50%,-50%) rotate(360deg);
+}
 }
 
-.footer-planets{
-    position:absolute;
-    bottom:25px;
-    width:100%;
-    text-align:center;
-    color:#888;
-    font-size:1.4rem;
+/* Planet */
+
+.planet{
+position:absolute;
+top:-15px;
+left:50%;
+transform:translateX(-50%);
+border-radius:50%;
+}
+
+.mercury{
+width:12px;
+height:12px;
+background:#9a9a9a;
+}
+
+.venus{
+width:18px;
+height:18px;
+background:#d9a066;
+}
+
+.earth{
+width:22px;
+height:22px;
+background:linear-gradient(#1e90ff,#32cd32);
+}
+
+.mars{
+width:16px;
+height:16px;
+background:#c1440e;
+}
+
+.jupiter{
+width:38px;
+height:38px;
+background:#d8b27d;
+}
+
+.saturn{
+width:34px;
+height:34px;
+background:#e3c98a;
+position:absolute;
+top:-17px;
+left:50%;
+transform:translateX(-50%);
+border-radius:50%;
+}
+
+.saturn::before{
+content:'';
+position:absolute;
+width:60px;
+height:12px;
+border:2px solid #f0dca5;
+border-radius:50%;
+left:-13px;
+top:10px;
+}
+
+/* Judul */
+
+.hero{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+z-index:10;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,6rem);
+color:white;
+letter-spacing:8px;
+
+text-shadow:
+0 0 10px #00ffff,
+0 0 25px #00ffff,
+0 0 50px #00ffff;
+
+animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.03);
+}
+}
+
+.hero p{
+margin-top:15px;
+font-size:1.1rem;
+color:#ddd;
+}
+
+.enter-btn{
+display:inline-block;
+margin-top:35px;
+padding:15px 55px;
+
+border:2px solid #00ffff;
+border-radius:50px;
+
+color:white;
+text-decoration:none;
+
+box-shadow:0 0 20px #00ffff;
+
+transition:.3s;
+}
+
+.enter-btn:hover{
+background:#00ffff;
+color:black;
+transform:scale(1.08);
+}
+
+/* Meteor */
+
+.meteor{
+position:absolute;
+width:2px;
+height:120px;
+background:linear-gradient(white,transparent);
+transform:rotate(45deg);
+
+animation:meteorMove 3s linear;
+}
+
+@keyframes meteorMove{
+from{
+transform:translate(0,0) rotate(45deg);
+}
+to{
+transform:translate(600px,600px) rotate(45deg);
+}
 }
 
 </style>
 </head>
+
 <body>
 
-<!-- Orbit Planet -->
+<div class="sun"></div>
+
 <div class="orbit orbit1">
-    <div class="planet mercury"></div>
+<div class="planet mercury"></div>
 </div>
 
 <div class="orbit orbit2">
-    <div class="planet earth"></div>
+<div class="planet venus"></div>
 </div>
 
 <div class="orbit orbit3">
-    <div class="saturn"></div>
+<div class="planet earth"></div>
 </div>
 
-<!-- Judul -->
+<div class="orbit orbit4">
+<div class="planet mars"></div>
+</div>
+
+<div class="orbit orbit5">
+<div class="planet jupiter"></div>
+</div>
+
+<div class="orbit orbit3" style="animation-duration:20s;">
+<div class="saturn"></div>
+</div>
+
 <div class="hero">
-    <h1>KAKANDA ZONE</h1>
 
-    <p>Welcome To My Universe ✨</p>
+<h1>KAKANDA ZONE</h1>
 
-    <a href="home.html" class="enter-btn">
-        ENTER
-    </a>
-</div>
+<p>Welcome To My Universe ✨</p>
 
-<div class="footer-planets">
-☿ ♀ 🌍 ♂ ♃ 🪐 ♅ ♆
+<a href="home.html" class="enter-btn">
+ENTER
+</a>
+
 </div>
 
 <script>
 
-/* Membuat Bintang */
+/* Bintang */
 for(let i=0;i<250;i++){
 
-    let star=document.createElement("div");
+let star=document.createElement('div');
 
-    star.classList.add("star");
+star.classList.add('star');
 
-    let size=Math.random()*3+1;
+let size=Math.random()*3+1;
 
-    star.style.width=size+"px";
-    star.style.height=size+"px";
+star.style.width=size+'px';
+star.style.height=size+'px';
 
-    star.style.left=Math.random()*100+"vw";
-    star.style.top=Math.random()*100+"vh";
+star.style.left=Math.random()*100+'vw';
+star.style.top=Math.random()*100+'vh';
 
-    star.style.animationDelay=Math.random()*5+"s";
+star.style.animationDelay=Math.random()*5+'s';
 
-    document.body.appendChild(star);
+document.body.appendChild(star);
 }
+
+/* Meteor */
+function createMeteor(){
+
+const meteor=document.createElement('div');
+
+meteor.classList.add('meteor');
+
+meteor.style.left=Math.random()*100+'vw';
+meteor.style.top='-100px';
+
+document.body.appendChild(meteor);
+
+setTimeout(()=>{
+meteor.remove();
+},3000);
+}
+
+setInterval(createMeteor,12000);
 
 </script>
 
