@@ -94,36 +94,43 @@ font-size:0.9rem;
 
 .hobbies{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+grid-template-columns:repeat(2,1fr);
 gap:15px;
-margin-top:20px;
-}
-
 margin-top:20px;
 }
 
 .hobby{
-background:rgba(255,255,255,.05);
+background:rgba(255,192,203,.08);
+
+border:1px solid rgba(255,105,180,.3);
 
 padding:20px;
 
-border-radius:15px;
+border-radius:20px;
 
 display:flex;
+justify-content:center;
 align-items:center;
-gap:15px;
 
 font-size:1.1rem;
 
 transition:.3s;
+
+backdrop-filter:blur(8px);
 }
 
 .hobby:hover{
 
-transform:translateY(-5px);
+transform:
+translateY(-5px)
+scale(1.03);
 
 box-shadow:
-0 0 15px cyan;
+0 0 10px hotpink,
+0 0 20px hotpink,
+0 0 40px deeppink;
+
+border-color:hotpink;
 
 }
 
