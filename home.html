@@ -70,11 +70,19 @@ margin-bottom:50px;
 
 color:white;
 
+opacity:0;
+
+animation:
+titleEnter 1s ease forwards;
+
+animation-delay:.3s;
+
 text-shadow:
 0 0 10px #ff69b4,
 0 0 20px #ff69b4,
 0 0 40px #ff69b4,
 0 0 80px #ff69b4;
+  
 }
 
 /* Card */
@@ -96,6 +104,11 @@ box-shadow:
 0 0 20px rgba(255,105,180,.2);
 
 transition:.3s;
+
+opacity:0;
+
+animation:cardEnter 1s ease forwards;
+animation-delay:.8s;
 }
 
 .card:hover{
@@ -193,6 +206,34 @@ to{
 opacity:1;
 transform:translateY(0);
   
+}
+
+}
+
+@keyframes titleEnter{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes cardEnter{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
 }
 
 }
