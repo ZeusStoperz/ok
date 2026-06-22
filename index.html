@@ -17,14 +17,15 @@ box-sizing:border-box;
 }
 
 body{
-font-family:'Orbitron',sans-serif;
-background:#000814;
+background:#030712;
 overflow:hidden;
 height:100vh;
+font-family:'Orbitron',sans-serif;
 position:relative;
 }
 
-/* Bintang */
+/* BINTANG */
+
 .star{
 position:absolute;
 background:white;
@@ -37,69 +38,68 @@ from{opacity:.2;}
 to{opacity:1;}
 }
 
-/* Matahari */
+/* MATAHARI */
+
 .sun{
 position:absolute;
-top:50%;
+top:38%;
 left:50%;
 transform:translate(-50%,-50%);
-width:140px;
-height:140px;
+
+width:320px;
+height:320px;
+
 border-radius:50%;
 
 background:radial-gradient(
 circle,
-#ffe066,
-#ffb703,
-#fb8500,
-#ff6b00
+#fff7a8 0%,
+#ffd60a 20%,
+#ffb703 45%,
+#fb8500 70%,
+#ff6b00 100%
 );
 
 box-shadow:
-0 0 40px #ffb703,
-0 0 80px #fb8500,
-0 0 140px #ff6b00;
+0 0 100px #ffd60a,
+0 0 200px #ffb703,
+0 0 350px #fb8500,
+0 0 500px #ff6b00;
+
+animation:sunPulse 5s ease-in-out infinite;
 }
 
-/* Orbit */
+@keyframes sunPulse{
+
+0%,100%{
+transform:translate(-50%,-50%) scale(1);
+}
+
+50%{
+transform:translate(-50%,-50%) scale(1.05);
+}
+
+}
+
+/* ORBIT */
+
 .orbit{
 position:absolute;
-top:50%;
+top:38%;
 left:50%;
 transform:translate(-50%,-50%);
 border:1px solid rgba(255,255,255,.08);
 border-radius:50%;
 }
 
-.orbit1{
-width:220px;
-height:220px;
-animation:spin 8s linear infinite;
-}
-
-.orbit2{
-width:300px;
-height:300px;
-animation:spin 12s linear infinite;
-}
-
-.orbit3{
-width:400px;
-height:400px;
-animation:spin 16s linear infinite;
-}
-
-.orbit4{
-width:520px;
-height:520px;
-animation:spin 22s linear infinite;
-}
-
-.orbit5{
-width:650px;
-height:650px;
-animation:spin 30s linear infinite;
-}
+.orbit1{width:180px;height:180px;animation:spin 8s linear infinite;}
+.orbit2{width:250px;height:250px;animation:spin 12s linear infinite;}
+.orbit3{width:330px;height:330px;animation:spin 16s linear infinite;}
+.orbit4{width:420px;height:420px;animation:spin 20s linear infinite;}
+.orbit5{width:520px;height:520px;animation:spin 28s linear infinite;}
+.orbit6{width:640px;height:640px;animation:spin 36s linear infinite;}
+.orbit7{width:780px;height:780px;animation:spin 45s linear infinite;}
+.orbit8{width:920px;height:920px;animation:spin 55s linear infinite;}
 
 @keyframes spin{
 from{
@@ -110,12 +110,12 @@ transform:translate(-50%,-50%) rotate(360deg);
 }
 }
 
-/* Planet */
+/* PLANET */
 
 .planet{
 position:absolute;
-top:-15px;
 left:50%;
+top:-15px;
 transform:translateX(-50%);
 border-radius:50%;
 }
@@ -133,30 +133,37 @@ background:#d9a066;
 }
 
 .earth{
-width:22px;
-height:22px;
-background:linear-gradient(#1e90ff,#32cd32);
+width:24px;
+height:24px;
+background:linear-gradient(#1e90ff,#2ecc71);
 }
 
 .mars{
-width:16px;
-height:16px;
+width:18px;
+height:18px;
 background:#c1440e;
 }
 
 .jupiter{
-width:38px;
-height:38px;
-background:#d8b27d;
+width:55px;
+height:55px;
+background:
+repeating-linear-gradient(
+0deg,
+#d9b38c,
+#d9b38c 8px,
+#c9975b 8px,
+#c9975b 16px
+);
 }
 
 .saturn{
-width:34px;
-height:34px;
-background:#e3c98a;
+width:40px;
+height:40px;
+background:#e6c98b;
 position:absolute;
-top:-17px;
 left:50%;
+top:-20px;
 transform:translateX(-50%);
 border-radius:50%;
 }
@@ -164,63 +171,64 @@ border-radius:50%;
 .saturn::before{
 content:'';
 position:absolute;
-width:60px;
-height:12px;
+width:70px;
+height:14px;
 border:2px solid #f0dca5;
 border-radius:50%;
-left:-13px;
-top:10px;
+left:-15px;
+top:11px;
 }
 
-/* Judul */
+.uranus{
+width:30px;
+height:30px;
+background:#8be9fd;
+}
+
+.neptune{
+width:28px;
+height:28px;
+background:#4169e1;
+}
+
+/* HERO */
 
 .hero{
 position:absolute;
-top:50%;
+top:72%;
 left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
-z-index:10;
+z-index:100;
 }
 
 .hero h1{
 font-size:clamp(3rem,8vw,6rem);
 color:white;
-letter-spacing:8px;
+letter-spacing:10px;
 
 text-shadow:
 0 0 10px #00ffff,
-0 0 25px #00ffff,
-0 0 50px #00ffff;
-
-animation:pulse 3s infinite;
-}
-
-@keyframes pulse{
-0%,100%{
-transform:scale(1);
-}
-50%{
-transform:scale(1.03);
-}
+0 0 20px #00ffff,
+0 0 40px #00ffff;
 }
 
 .hero p{
 margin-top:15px;
-font-size:1.1rem;
 color:#ddd;
+font-size:1.1rem;
 }
 
 .enter-btn{
 display:inline-block;
 margin-top:35px;
-padding:15px 55px;
+padding:15px 60px;
 
 border:2px solid #00ffff;
 border-radius:50px;
 
-color:white;
 text-decoration:none;
+color:white;
 
 box-shadow:0 0 20px #00ffff;
 
@@ -233,25 +241,35 @@ color:black;
 transform:scale(1.08);
 }
 
-/* Meteor */
+/* METEOR */
 
 .meteor{
 position:absolute;
 width:2px;
 height:120px;
-background:linear-gradient(white,transparent);
+
+background:
+linear-gradient(white,transparent);
+
 transform:rotate(45deg);
 
 animation:meteorMove 3s linear;
 }
 
 @keyframes meteorMove{
+
 from{
-transform:translate(0,0) rotate(45deg);
+transform:
+translate(0,0)
+rotate(45deg);
 }
+
 to{
-transform:translate(600px,600px) rotate(45deg);
+transform:
+translate(700px,700px)
+rotate(45deg);
 }
+
 }
 
 </style>
@@ -261,29 +279,14 @@ transform:translate(600px,600px) rotate(45deg);
 
 <div class="sun"></div>
 
-<div class="orbit orbit1">
-<div class="planet mercury"></div>
-</div>
-
-<div class="orbit orbit2">
-<div class="planet venus"></div>
-</div>
-
-<div class="orbit orbit3">
-<div class="planet earth"></div>
-</div>
-
-<div class="orbit orbit4">
-<div class="planet mars"></div>
-</div>
-
-<div class="orbit orbit5">
-<div class="planet jupiter"></div>
-</div>
-
-<div class="orbit orbit3" style="animation-duration:20s;">
-<div class="saturn"></div>
-</div>
+<div class="orbit orbit1"><div class="planet mercury"></div></div>
+<div class="orbit orbit2"><div class="planet venus"></div></div>
+<div class="orbit orbit3"><div class="planet earth"></div></div>
+<div class="orbit orbit4"><div class="planet mars"></div></div>
+<div class="orbit orbit5"><div class="planet jupiter"></div></div>
+<div class="orbit orbit6"><div class="saturn"></div></div>
+<div class="orbit orbit7"><div class="planet uranus"></div></div>
+<div class="orbit orbit8"><div class="planet neptune"></div></div>
 
 <div class="hero">
 
@@ -300,43 +303,46 @@ ENTER
 <script>
 
 /* Bintang */
-for(let i=0;i<250;i++){
 
-let star=document.createElement('div');
+for(let i=0;i<300;i++){
 
-star.classList.add('star');
+let star=document.createElement("div");
+
+star.classList.add("star");
 
 let size=Math.random()*3+1;
 
-star.style.width=size+'px';
-star.style.height=size+'px';
+star.style.width=size+"px";
+star.style.height=size+"px";
 
-star.style.left=Math.random()*100+'vw';
-star.style.top=Math.random()*100+'vh';
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
 
-star.style.animationDelay=Math.random()*5+'s';
+star.style.animationDelay=Math.random()*5+"s";
 
 document.body.appendChild(star);
 }
 
 /* Meteor */
+
 function createMeteor(){
 
-const meteor=document.createElement('div');
+const meteor=document.createElement("div");
 
-meteor.classList.add('meteor');
+meteor.classList.add("meteor");
 
-meteor.style.left=Math.random()*100+'vw';
-meteor.style.top='-100px';
+meteor.style.left=Math.random()*100+"vw";
+meteor.style.top="-100px";
 
 document.body.appendChild(meteor);
 
 setTimeout(()=>{
 meteor.remove();
 },3000);
+
 }
 
-setInterval(createMeteor,12000);
+setInterval(createMeteor,10000);
 
 </script>
 
