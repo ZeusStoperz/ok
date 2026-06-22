@@ -539,19 +539,17 @@ window.location.href="home.html";
 
 <script>
 
-window.addEventListener("pageshow", function(){
+window.addEventListener("pageshow", function(e){
 
-document.body.classList.remove("hyperjump");
+if(e.persisted){
 
-const btn=document.getElementById("enterBtn");
+location.reload();
 
-if(btn){
-btn.classList.remove("hyper");
 }
 
 });
 
 </script>
-
+  
 </body>
 </html>
