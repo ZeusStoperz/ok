@@ -1,31 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KAKANDA ZONE - HOME</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#030712;
+font-family:'Orbitron',sans-serif;
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+/* Bintang */
+
+.star{
+position:fixed;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite alternate;
+z-index:0;
+}
+
+@keyframes twinkle{
+from{opacity:.2;}
+to{opacity:1;}
+}
+
+/* Container */
+
+.container{
+position:relative;
+z-index:1;
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* Judul */
+
+.title{
+text-align:center;
+font-size:3rem;
+
+margin-bottom:40px;
+
+text-shadow:
+0 0 10px cyan,
+0 0 20px cyan,
+0 0 40px cyan;
+}
+
+/* Card */
+
+.card{
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,255,.3);
+
+border-radius:25px;
+
+padding:30px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 0 20px rgba(0,255,255,.15);
+}
+
+.card h2{
+margin-bottom:20px;
+color:#00ffff;
+}
+
+.info{
+line-height:2;
+}
+
+/* Hobbies */
+
+.hobbies{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+
+margin-top:20px;
+}
+
+.hobby{
+background:rgba(255,255,255,.05);
+
+padding:20px;
+
+border-radius:15px;
+
+text-align:center;
+
+font-size:1.1rem;
+
+transition:.3s;
+}
+
+.hobby:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 15px cyan;
+
+}
+
+/* Footer */
+
+.footer{
+text-align:center;
+margin-top:40px;
+opacity:.8;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>HELLO, I'M KANDA 👋</h1>
+<div class="container">
+
+<h1 class="title">
+HELLO, I'M KANDA 👋
+</h1>
+
+<div class="card">
 
 <h2>ABOUT ME</h2>
 
-<p>Nama : Kanda</p>
+<div class="info">
 
-<p>Jenis Kelamin : Pria Sigma 😎</p>
+<p>👤 Nama : Kanda</p>
 
-<p>Status : Jarang pasang status 😭</p>
+<p>😎 Jenis Kelamin : Pria Sigma</p>
 
-<p>Kenalan lebih dalam : Chat aja 🤭</p>
+<p>😭 Status : Jarang pasang status</p>
+
+<p>🤭 Kenalan lebih dalam : Chat aja</p>
+
+</div>
+
+<hr style="margin:25px 0; opacity:.3;">
 
 <h2>HOBBIES</h2>
 
-<p>🏀 Basket</p>
+<div class="hobbies">
 
-<p>🎸 Bermain Gitar</p>
+<div class="hobby">
+🏀
+<br><br>
+Basket
+</div>
 
-<p>🎵 Mendengarkan Musik</p>
+<div class="hobby">
+🎸
+<br><br>
+Bermain Gitar
+</div>
 
-<p>💪 Olahraga</p>
+<div class="hobby">
+🎵
+<br><br>
+Mendengarkan Musik
+</div>
+
+<div class="hobby">
+💪
+<br><br>
+Olahraga
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+🚀 Welcome To KAKANDA ZONE 🚀
+
+</div>
+
+</div>
+
+<script>
+
+/* Bintang */
+
+for(let i=0;i<200;i++){
+
+let star=document.createElement("div");
+
+star.classList.add("star");
+
+let size=Math.random()*3+1;
+
+star.style.width=size+"px";
+star.style.height=size+"px";
+
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+
+star.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(star);
+
+}
+
+</script>
 
 </body>
 </html>
