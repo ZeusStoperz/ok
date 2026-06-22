@@ -233,6 +233,9 @@ font-size:clamp(3rem,8vw,6rem);
 color:white;
 letter-spacing:10px;
 
+position:relative;
+left:5px;
+
 text-shadow:
 0 0 10px #00ffff,
 0 0 20px #00ffff,
@@ -259,6 +262,8 @@ color:white;
 box-shadow:0 0 20px #00ffff;
 
 transition:.3s;
+
+animation:glitch 4s infinite;
 }
 
 .enter-btn:hover{
@@ -294,6 +299,34 @@ to{
 transform:
 translate(700px,700px)
 rotate(45deg);
+}
+
+}
+
+@keyframes glitch{
+
+0%,90%,100%{
+transform:translateX(0);
+}
+
+91%{
+transform:translateX(-2px);
+}
+
+92%{
+transform:translateX(2px);
+}
+
+93%{
+transform:translateX(-2px);
+}
+
+94%{
+transform:translateX(2px);
+}
+
+95%{
+transform:translateX(0);
 }
 
 }
