@@ -389,8 +389,6 @@ z-index:9999;
 
 <body>
 
-<div class="page-transition"></div>
-
 <div class="container">
 
 <h1 class="title">
@@ -587,15 +585,10 @@ document.getElementById("aboutPage");
 const gallery=
 document.getElementById("galleryPage");
 
-const overlay=
-document.querySelector(".page-transition");
-
 about.style.opacity="0";
 
 about.style.transform=
 "scale(.6) translateY(-120px)";
-
-overlay.style.opacity=".6";
 
 setTimeout(()=>{
 
@@ -609,8 +602,6 @@ gallery.style.opacity="1";
 
 gallery.style.transform=
 "translateY(0)";
-
-overlay.style.opacity="0";
 
 },100);
 
