@@ -159,6 +159,16 @@ transform:scale(1.02);
 
 }
 
+.song-btn.clicked{
+
+background:#ff69b4;
+
+box-shadow:
+0 0 15px #ff69b4,
+0 0 30px #ff69b4;
+
+}
+
 .music-note{
 
 margin-top:15px;
@@ -336,17 +346,17 @@ CIE CIE STALKING🤭
 <h2>Stalking Sambil Dengar Lagu Enak Kali😋</h2>
 
 <button class="song-btn"
-onclick="playSong('love-story.mp3')">
+onclick="playSong('love-story.mp3', this)">
 💖 Love Story 💖
 </button>
 
 <button class="song-btn"
-onclick="playSong('glue-song.mp3')">
+onclick="playSong('glue-song.mp3', this)">
 💖 Glue Song 💖
 </button>
 
 <button class="song-btn"
-onclick="playSong('until-i-found-you.mp3')">
+onclick="playSong('until-i-found-you.mp3', this)">
 💖 Until I Found You 💖
 </button>
 
@@ -465,7 +475,15 @@ let currentSong=0;
 const music=
 document.getElementById("bgMusic");
 
-function playSong(song){
+function playSong(song, button){
+
+button.classList.add("clicked");
+
+setTimeout(()=>{
+
+button.classList.remove("clicked");
+
+},700);
 
 currentSong=
 playlist.indexOf(song);
