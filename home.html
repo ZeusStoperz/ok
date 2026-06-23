@@ -596,7 +596,8 @@ LANJUT YUK
 
 <div id="galleryPage">
 
-<h1 class="gallery-title">
+<h1 id="galleryTitle"
+class="gallery-title">
 📸 GALERI KAKANDA
 </h1>
 
@@ -745,8 +746,11 @@ about.style.display="none";
 
 gallery.style.display="block";
 
-gallery.scrollIntoView({
-behavior:"smooth"
+document
+.getElementById("galleryTitle")
+.scrollIntoView({
+behavior:"smooth",
+block:"start"
 });
 
 setTimeout(()=>{
