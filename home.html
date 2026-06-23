@@ -462,7 +462,9 @@ Ga pengen pake musik? scroll aja
 
 </div>
 
-<a href="gallery.html" class="gallery-btn">
+<a href="#"
+class="gallery-btn"
+onclick="showGallery(); return false;">
 LANJUT YUK
 </a>
 
@@ -552,6 +554,38 @@ playlist[currentSong];
 music.play();
 
 });
+
+function showGallery(){
+
+const about=
+document.getElementById("aboutPage");
+
+const gallery=
+document.getElementById("galleryPage");
+
+about.style.opacity="0";
+
+about.style.transform=
+"scale(.85) translateY(-50px)";
+
+setTimeout(()=>{
+
+about.style.display="none";
+
+gallery.style.display="block";
+
+setTimeout(()=>{
+
+gallery.style.opacity="1";
+
+gallery.style.transform=
+"translateY(0)";
+
+},50);
+
+},800);
+
+}
 
 </script>
 
