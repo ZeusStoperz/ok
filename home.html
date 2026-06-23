@@ -114,6 +114,8 @@ color:#ffd6ec;
 
 margin-bottom:15px;
 
+font-size:1.2rem;
+  
 }
 
 .music-text{
@@ -352,7 +354,7 @@ onclick="playSong('until-i-found-you.mp3')">
 Ga pengen pake musik? scroll aja
 </p>
 
-<audio id="bgMusic" loop></audio>
+<audio id="bgMusic"></audio>
 
 </div>
 
@@ -452,16 +454,44 @@ document.body.appendChild(star);
 
 <script>
 
-function playSong(song){
+const playlist=[
+"love-story.mp3",
+"glue-song.mp3",
+"until-i-found-you.mp3"
+];
 
-const music =
+let currentSong=0;
+
+const music=
 document.getElementById("bgMusic");
 
-music.src = song;
+function playSong(song){
+
+currentSong=
+playlist.indexOf(song);
+
+music.src=song;
 
 music.play();
 
 }
+
+music.addEventListener("ended",()=>{
+
+currentSong++;
+
+if(currentSong>=playlist.length){
+
+currentSong=0;
+
+}
+
+music.src=
+playlist[currentSong];
+
+music.play();
+
+});
 
 </script>
 
