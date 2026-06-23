@@ -382,6 +382,32 @@ opacity:.9;
 
 }
 
+.click-note{
+
+text-align:center;
+
+margin-top:10px;
+
+color:#ff69b4;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.click-note:hover{
+
+transform:scale(1.1);
+
+text-shadow:
+0 0 10px #ff69b4,
+0 0 20px #ff69b4;
+
+}
+
 .page-transition{
 
 position:fixed;
@@ -597,10 +623,14 @@ class="gallery-img"
 onclick="rainPhotos()">
 
 <p class="gallery-note">
-My Besti Gueh🥰<br>
-Coba Tekan
+My Besti Gueh🥰
 </p>
 
+<p class="click-note"
+onclick="rainPhotos()">
+Coba Tekan
+</p>
+  
 </div>
 
 </div>
@@ -719,7 +749,7 @@ function rainPhotos(){
 const img =
 document.createElement("img");
 
-img.src = "besti1.jpg";
+img.src = "besti.jpg";
 
 img.classList.add("rain-photo");
 
