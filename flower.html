@@ -350,8 +350,8 @@ const gifts = [
 "200w (4).webp",
 "200w (5).webp",
 "200w (6).webp",
-"200w (7).webp"
-"200w (8).webp"
+"200w (7).webp",
+"200w (8).webp",
 "200w (9).webp"
 
 ];
@@ -383,10 +383,10 @@ img.style.animation =
 document.body.appendChild(img);
 
 const randomTop =
-Math.random()*60 + 15;
+Math.random()*80 + 5;
 
 const randomLeft =
-Math.random()*50 + 25;
+Math.random()*80 + 10;
 
 setTimeout(()=>{
 
@@ -400,9 +400,9 @@ randomLeft + "vw";
 
 activeGifts.push(img);
 
-delay += 50;
-
 },delay);
+
+delay += 50;
 
 });
 
