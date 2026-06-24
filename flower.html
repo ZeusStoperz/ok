@@ -99,11 +99,33 @@ font-size:24px;
 
 pointer-events:none;
 
+z-index:1000;
+
+transform:translate(-50%,-50%);
+
+opacity:0;
+
+animation:flowerFade 2.0s ease forwards;
+
 transition:
 top .8s ease,
 left .8s ease;
 
-z-index:1000;
+}
+
+@keyframes flowerFade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
 
 }
 
@@ -345,8 +367,6 @@ function bloomFlowers(){
 
 for(let i=0;i<50;i++){
 
-setTimeout(()=>{
-
 let flower =
 document.createElement("div");
 
@@ -380,8 +400,6 @@ setTimeout(()=>{
 flower.remove();
 
 },5000);
-
-}, i*30);
 
 }
 
