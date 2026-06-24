@@ -205,7 +205,7 @@ text-decoration:none;
 
 position:fixed;
 
-width:180px;
+width:140px;
 
 max-width:40vw;
 
@@ -214,6 +214,9 @@ border-radius:20px;
 z-index:9999;
 
 pointer-events:none;
+
+transform:
+translate(-50%,-50%);
 
 transition:
 top .5s ease,
@@ -378,10 +381,10 @@ img.style.animation =
 document.body.appendChild(img);
 
 const randomTop =
-Math.random()*70 + 5;
+Math.random()*60 + 15;
 
 const randomLeft =
-Math.random()*80 + 5;
+Math.random()*50 + 25;
 
 setTimeout(()=>{
 
