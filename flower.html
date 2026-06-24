@@ -211,6 +211,7 @@ translate(-50%,-50%);
 transition:
 top .5s ease,
 left .5s ease;
+opacity 1s ease;
 
 }
 
@@ -429,11 +430,21 @@ setTimeout(()=>{
 
 activeGifts.forEach(img=>{
 
+img.style.opacity = "0";
+
+});
+
+setTimeout(()=>{
+
+activeGifts.forEach(img=>{
+
 img.remove();
 
 });
 
-},3000);
+},1000);
+
+},4000);
 
 }
   
