@@ -215,6 +215,10 @@ z-index:9999;
 
 pointer-events:none;
 
+transition:
+top .5s ease,
+left .5s ease;
+
 }
 
 @keyframes giftExplode{
@@ -349,9 +353,13 @@ const gifts = [
 
 const activeGifts = [];
 
+let delay = 0;
+
 for(let wave=0; wave<3; wave++){
 
 gifts.forEach((gif)=>{
+
+setTimeout(()=>{
 
 const img =
 document.createElement("img");
@@ -360,18 +368,36 @@ img.src = gif;
 
 img.classList.add("giftGif");
 
-img.style.top =
-Math.random()*70 + 5 + "vh";
+img.style.top = "50vh";
 
-img.style.left =
-Math.random()*80 + 5 + "vw";
+img.style.left = "50vw";
 
 img.style.animation =
 "giftExplode .5s ease forwards";
 
 document.body.appendChild(img);
 
+const randomTop =
+Math.random()*70 + 5;
+
+const randomLeft =
+Math.random()*80 + 5;
+
+setTimeout(()=>{
+
+img.style.top =
+randomTop + "vh";
+
+img.style.left =
+randomLeft + "vw";
+
+},50);
+
 activeGifts.push(img);
+
+delay += 50;
+
+},delay);
 
 });
 
