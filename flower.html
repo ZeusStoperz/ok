@@ -341,13 +341,17 @@ const gifts = [
 "gift2.gif",
 "gift3.gif",
 "gift4.gif",
-"gift5.gif"
+"gift5.gif",
+"gift6.gif",
+"gift7.gif"
 
 ];
 
-gifts.forEach((gif,index)=>{
+const activeGifts = [];
 
-setTimeout(()=>{
+for(let wave=0; wave<3; wave++){
+
+gifts.forEach((gif)=>{
 
 const img =
 document.createElement("img");
@@ -357,21 +361,33 @@ img.src = gif;
 img.classList.add("giftGif");
 
 img.style.top =
-Math.random()*60 + 10 + "vh";
+Math.random()*70 + 5 + "vh";
 
 img.style.left =
-Math.random()*70 + 10 + "vw";
+Math.random()*80 + 5 + "vw";
 
 img.style.animation =
 "giftExplode .5s ease forwards";
 
 document.body.appendChild(img);
 
-},index*200);
+activeGifts.push(img);
 
 });
 
 }
 
+setTimeout(()=>{
+
+activeGifts.forEach(img=>{
+
+img.remove();
+
+});
+
+},3000);
+
+}
+  
 </script></body>
   </html>
