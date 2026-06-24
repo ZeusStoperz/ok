@@ -401,10 +401,14 @@ const col =
 activeGifts.length % cols;
 
 const randomTop =
-8 + (row * 13);
+12 + (row * 14);
+
+const leftPositions = [
+20, 50, 80
+];
 
 const randomLeft =
-5 + (col * 32);
+leftPositions[col];
 
 setTimeout(()=>{
 
