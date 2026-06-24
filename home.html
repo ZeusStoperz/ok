@@ -672,11 +672,11 @@ Coba Tekan
   
 </div>
 
-<a href="#"
+<button
 class="gallery-btn"
 onclick="goFlower()">
 🌸 Letsgo Halaman Terakhir 🌸
-</a>
+</button>
 
 </div>
 
@@ -869,11 +869,10 @@ index++;
 
 function goFlower(){
 
-document.querySelector(
-".container"
-).classList.add(
-"page-exit"
-);
+document.body.style.transition =
+"opacity 1s ease";
+
+document.body.style.opacity = "0";
 
 setTimeout(()=>{
 
