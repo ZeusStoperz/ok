@@ -486,6 +486,14 @@ opacity:0;
 }
 
 }
+
+.page-exit{
+
+opacity:0;
+
+transition:1.5s ease;
+
+}
      
 </style>
 </head>
@@ -542,7 +550,7 @@ Pengen pause musik? refresh aja
 
 <p>Rambut jembyt (keriting🥦)</p>
 
-<p>Pendiam kalau baru kenal</p>
+<p>Pendiam kalau baru kenal😄</p>
 
 <p>Suka warna pink🤗</p>
 
@@ -664,8 +672,9 @@ Coba Tekan
   
 </div>
 
-<a href="flower.html"
-class="gallery-btn">
+<a href="#"
+class="gallery-btn"
+onclick="goFlower()">
 🌸 Letsgo Halaman Terakhir 🌸
 </a>
 
@@ -855,6 +864,23 @@ index++;
 }
 
 },500);
+
+}
+
+function goFlower(){
+
+document.querySelector(
+".container"
+).classList.add(
+"page-exit"
+);
+
+setTimeout(()=>{
+
+window.location.href =
+"flower.html";
+
+},1500);
 
 }
   
