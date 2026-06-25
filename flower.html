@@ -364,7 +364,7 @@ flower.remove();
 
 function bloomFlowers(){
 
-for(let i=0;i<50;i++){
+for(let i=0;i<80;i++){
 
 let flower =
 document.createElement("div");
@@ -406,6 +406,15 @@ flower.remove();
 
 }
 
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+bloomFlowers();
+
+},300);
+
+});
 
 
 /* hadiah */
